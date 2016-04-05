@@ -1,0 +1,79 @@
+README:
+
+To compile : Run makefile (its a shell script)
+./makefile
+
+To run:
+./myshell
+
+Commands for testing:
+
+BUILT IN COMMANDS:
+cd:
+	cd <no arg>
+	cd .
+	cd ~
+	cd ..
+	cd <relative path>
+	cd <absolute path>
+	cd <file name>
+	cd <file or path that does not exist>
+
+
+clr
+
+dir:
+	dir .
+	dir ..
+	dir <no arg>
+	dir <dir name>
+	dir <file name>
+
+environ:
+	environ
+	environ <dummy argument> // Does not do anything. Just returns a prompt.
+
+echo:
+	echo <string>
+	echo <string with multiple tabs>
+
+help
+
+pause
+
+exit
+
+BACKGROUND:
+	afplay <musicFileName.mp3> &
+	Can run other commands like ls
+	ctrl + c to terminate background. Press enter
+
+REDIRECTION:
+	ls -l > foo
+	cat foo
+
+	cat hello (file with unsorted numbers)
+	sort < hello
+
+PIPE:
+	ls -l | grep myshell
+
+EXTERNAL COMMANDS:
+	If commands are not built in nor one of special type above, then it runs commands on normal bash shell using execve.
+	Eg: printenv
+
+INVALID:
+	hi
+	&
+	?
+
+MULTIPLE OPERATIONS:
+	ls -l | grep hello > bye // Does not support
+
+Ctrl+D
+	Ensure that this command does not create unknown behaviour like running into infinite loop.
+	In my shell, ctrl D is handled to exit the shell gracefully.
+
+
+
+
